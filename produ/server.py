@@ -35,7 +35,17 @@ def processLogin():
         if value is None:
             missing.append(field)
     if missing:
-        return "Warning: Some fields are missing"
+        return process_missingFields(missing, "/login")
+
+    # este codigo controla los errores de campos faltantes
+    def process_missingFields(campos, next_page):
+        """
+        :param campos: Lista de Campos que faltan
+        :param next_page: ruta al pulsar botón continuar
+        :return: plantilla generada
+        """
+        return render_template("missingFields.html", inputs=campos, next=next_page)
+
 
     return '<!DOCTYPE html> ' \
            '<html lang="es">' \
