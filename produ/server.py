@@ -36,8 +36,7 @@ def processLogin():
             missing.append(field)
     if missing:
         return process_missingFields(missing, "/login")
-
-    # este codigo controla los errores de campos faltantes
+# este codigo controla los errores de campos faltantes
     def process_missingFields(campos, next_page):
         """
         :param campos: Lista de Campos que faltan
