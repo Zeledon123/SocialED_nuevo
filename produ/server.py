@@ -1,10 +1,9 @@
 # -*- coding: iso-8859-15 -*-
 
+from flask import Flask, request, render_template, session, redirect, url_for
+import os.path
 import json
-from flask import Flask, session
-app = Flask(__name__)
 
-from flask import Flask,  request
 app = Flask(__name__)
 
 def load_user(email, passwd):
